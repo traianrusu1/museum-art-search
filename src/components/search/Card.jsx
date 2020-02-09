@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DetailModal from './DetailModal';
+import './Card.css';
 
-const Card = () => {
+const Card = ({ artPiece }) => {
+	const [ show, setShow ] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = (e) => {
+		e.target.tagName !== 'A' && setShow(true);
+	};
+
 	return (
-		<div className="card">
-			<img className="card-img-top" src="/src/logo.svg" alt="Card image cap" />
-			<div className="card-body">
-				<h5 className="card-title">Card title</h5>
-				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the card's content.
-				</p>
-				<a href="#" className="btn btn-primary">
-					Go somewhere
-				</a>
+		<div>
+			<div className="card h-100" onClick={handleShow}>
+				<div>
+					<img className="card-img-top card-img" src={artPiece.primaryImageSmall} alt="Card image cap" />
+				</div>
+				<div className="card-body">
+					<h5 className="card-title">{artPiece.title}</h5>
+					<p className="card-text">{artPiece.department}</p>
+					<a href={artPiece.objectURL} target="_blank" className="btn btn-primary">
+						View On Site
+					</a>
+				</div>
 			</div>
+			<DetailModal artPiece={artPiece} show={show} handleClose={handleClose} />
 		</div>
 	);
 };
