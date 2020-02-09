@@ -15,9 +15,9 @@ const searchArt = async (text, abortSignal) => {
 		throw new Error('bad status = ' + result.status);
 	}
 	const json = await result.json();
-	let detailsResult;
+	let detailsResult = [];
 
-	if (json && json.objectIDs.length > 0) {
+	if (json && json.objectIDs && json.objectIDs.length > 0) {
 		// debugger;
 		detailsResult = await Promise.all(
 			json.objectIDs.slice(0, 20).map(async (id) => {
@@ -35,8 +35,10 @@ const searchArt = async (text, abortSignal) => {
 		);
 	}
 
+	const didSearch = true;
+
 	// debugger;
-	return detailsResult;
+	return { detailsResult, didSearch };
 };
 
 const useSearchArt = () => {
@@ -49,7 +51,7 @@ const useSearchArt = () => {
 	const search = useAsyncAbortable(
 		async (abortSignal, text) => {
 			if (text.length === 0) {
-				return [];
+				return { detailsResult: [], didSearch: false };
 			} else {
 				return debouncedSearchArt(text, abortSignal);
 			}
@@ -58,20 +60,7 @@ const useSearchArt = () => {
 		[ inputText ]
 	);
 
-	// const constantSearchArtDetails = useConstant(searchArt);
-
-	// // if (search.result && search.result.length > 0) {
 	// debugger;
-	// const detailsSearch = useAsyncAbortable(async (abortSignal, text) => {
-	// 	debugger;
-	// 	if (!search.result) {
-	// 		return [];
-	// 	} else {
-	// 		debugger;
-	// 		return constantSearchArtDetails(search.result, abortSignal);
-	// 	}
-	// }, []);
-	// }
 
 	// Return everything needed for the hook consumer
 	return {

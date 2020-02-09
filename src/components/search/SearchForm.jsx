@@ -3,9 +3,11 @@ import React from 'react';
 const SearchForm = ({ inputText, setInputText }) => {
 	return (
 		<div>
-			<form className="mt-3">
-				<div className="form-group">
-					<label htmlFor="search-art-text-input"> Search Art </label>
+			<form className="mt-4 row justify-content-center">
+				<div className="form-group col-lg-6">
+					<div className="d-flex justify-content-center">
+						<label htmlFor="search-art-text-input"> Search Art </label>
+					</div>
 					<input
 						className="form-control"
 						type="text"

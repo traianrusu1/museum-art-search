@@ -1,0 +1,10 @@
+.label {
+	color: gray;
+	font-size: 0.8rem;
+	/* line-height: 0.8rem; */
+}
+
+.value {
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+}
