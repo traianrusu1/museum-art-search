@@ -35,11 +35,7 @@ function App() {
 							Your search for "{inputText}" didn't return any results. Please try again.
 						</div>
 					)}
-					{machine.matches('success') && machine.context.results ? (
-						<ArtList results={machine.context.results} />
-					) : (
-						''
-					)}
+					{machine.matches('success') && <ArtList results={machine.context.results} />}
 				</div>
 			</section>
 		</Layout>
