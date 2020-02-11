@@ -1,4 +1,5 @@
 const fetchDetailsForAll = async (ids, abortSignal) => {
+	// use Promise.all to send all the requests and only when they are all done continue
 	return await Promise.all(
 		ids.map(async (id) => {
 			const individualResult = await fetch(
