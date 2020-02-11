@@ -14,6 +14,8 @@ const useSearchArt = (send) => {
 
 	const search = useAsyncAbortable(
 		async (abortSignal, text) => {
+			// because this function runs on every input change, but not every input change fires a request
+			// we reset it to idle here and then when the request is actually launched it updates the state
 			send('IDLE');
 			if (text.length === 0) {
 				return [];
