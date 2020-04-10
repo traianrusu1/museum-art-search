@@ -17,7 +17,7 @@ const Card = ({ artPiece }) => {
 					<img className="card-img-top card-img" src={artPiece.primaryImageSmall} alt="Card image cap" />
 				</div>
 				<div className="card-body">
-					<h5 className="card-title">{artPiece.title}</h5>
+					<h2 className="card-title">{artPiece.title}</h2>
 					<p className="card-text">{artPiece.department}</p>
 					<a href={artPiece.objectURL} target="_blank" className="btn btn-primary">
 						View On Site
