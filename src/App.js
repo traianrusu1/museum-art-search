@@ -15,7 +15,7 @@ function App() {
 
 	return (
 		<Layout>
-			<section className="container">
+			<section className="container formContainer">
 				<SearchForm inputText={inputText} setInputText={setInputText} />
 			</section>
 			<section className="container">

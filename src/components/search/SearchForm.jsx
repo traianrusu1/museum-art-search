@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './SearchForm.module.css';
 
 const SearchForm = ({ inputText, setInputText }) => {
 	return (
@@ -6,7 +7,7 @@ const SearchForm = ({ inputText, setInputText }) => {
 			<form className="mt-4 row justify-content-center">
 				<div className="form-group col-lg-6">
 					<div className="d-flex justify-content-center">
-						<label htmlFor="search-art-text-input"> Search Art </label>
+						<h1 htmlFor="search-art-text-input" className={styles.searchHeading}> Search Art </h1>
 					</div>
 					<input
 						className="form-control"

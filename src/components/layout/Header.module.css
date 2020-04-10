@@ -1,0 +1,25 @@
+.header{
+    background-color: #252D40;
+    color: #DFFAF1;
+    padding: 10px 10px;
+}
+
+.header a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.header a:hover{
+  color: rgb(65, 153, 124);
+  text-decoration: none;
+
+}
+
+.headerTitle{
+    /* margin-left: 2rem;
+    margin-top: 0; */
+    position: relative;
+    top:-5px;
+    left:10px;
+    height: 32px;
+}
