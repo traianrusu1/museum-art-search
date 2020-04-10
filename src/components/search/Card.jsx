@@ -11,7 +11,7 @@ const Card = ({ artPiece }) => {
 	};
 
 	return (
-		<div>
+		<>
 			<div className="card h-100" onClick={handleShow}>
 				<div>
 					<img className="card-img-top card-img" src={artPiece.primaryImageSmall} alt="Card image cap" />
@@ -25,7 +25,7 @@ const Card = ({ artPiece }) => {
 				</div>
 			</div>
 			<DetailModal artPiece={artPiece} show={show} handleClose={handleClose} />
-		</div>
+		</>
 	);
 };
 

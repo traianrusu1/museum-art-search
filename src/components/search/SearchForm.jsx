@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import styles from './SearchForm.module.css';
 
 const SearchForm = ({ inputText, setInputText }) => {
@@ -9,8 +11,11 @@ const SearchForm = ({ inputText, setInputText }) => {
 					<div className="d-flex justify-content-center">
 						<h1 htmlFor="search-art-text-input" className={styles.searchHeading}> Search Art </h1>
 					</div>
+					<span className={styles.searchIcon}>
+						<FontAwesomeIcon icon={faSearch} size="sm"/>
+					</span>
 					<input
-						className="form-control"
+						className={"form-control " + styles.searchInput}
 						type="text"
 						id="search-art-text-input"
 						value={inputText}

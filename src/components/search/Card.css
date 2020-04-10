@@ -7,6 +7,16 @@
 
 .card {
 	cursor: pointer;
+	border: 1px rgb(167, 167, 167) solid !important;
+	/* -moz-box-shadow:    0 0 8px;
+	-webkit-box-shadow: 0 0 8px ;
+	box-shadow:         0 0 8px; */
+}
+
+.card:hover{
+	-moz-box-shadow:    0 0 14px;
+	-webkit-box-shadow: 0 0 14px ;
+	box-shadow:         0 0 14px;
 }
 
 .card-title {

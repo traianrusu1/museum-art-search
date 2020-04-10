@@ -2,3 +2,22 @@
     margin-bottom: 30px;
     color: #252D40 !important;
 }
+
+.searchInput{
+    border-radius: 20px !important;
+    padding-left: 35px !important;
+}
+
+.searchInput:hover{
+    -moz-box-shadow:    0 0 10px;
+	-webkit-box-shadow: 0 0 10px ;
+	box-shadow:         0 0 10px;
+}
+
+.searchIcon{
+    position: relative;
+    top: 31px;
+    left:13px;
+    cursor: pointer;
+    color: rgb(154, 160, 166);
+}
